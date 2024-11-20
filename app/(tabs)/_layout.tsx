@@ -1,7 +1,8 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Tabs } from 'expo-router';
+/*import { Link } from 'expo-router';*/
+/*import { Pressable } from 'react-native';*/
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
@@ -29,9 +30,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
+          title: 'Iniciar Sesión',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
+          /* headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
                 {({ pressed }) => (
@@ -43,17 +44,25 @@ export default function TabLayout() {
                   />
                 )}
               </Pressable>
-            </Link>
-          ),
+            </Link> 
+          ), */
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
-          title: 'Tab Two',
+          title: 'En Línea 🟢',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerStyle: {
+            backgroundColor: '#001f3f', // Fondo azul para el header de la pantalla
+          },
+          headerTitleStyle: {
+            color: 'white', // Texto blanco para el título
+          },
         }}
+        
       />
     </Tabs>
+    
   );
 }
